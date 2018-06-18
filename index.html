@@ -7,11 +7,25 @@
 
   <!-- Added link to the jQuery Library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src = "game.js"></script>
 
 </head>
 <body>
-    <div id = "game">
+    <div class = "container">
+        <div class = "title">
+            <h1>The Psychic Game</h1>
+        </div>
+            
+        <hr>
         
+        <p>Guess what letter I am thinking of?</p>
+    </div>
+
+    <div id = "game">
+        <p>Wins: <span class = "win"></span></p>
+        <p>Losses: <span class = "loss"></span></p>
+        <p>Guesses left: <span class = "guessleft"></span></p>
+        <p>Your guesses: <span class = "yourguesses"></span></p>
     </div>
 
 </body>
