@@ -7,39 +7,44 @@ $(document).ready(function() {
 
     var winCount = 0;
     var lossCount = 0;
-    var guesses = 20;
+    var guesses = 10;
     var guessLetters = [];
-    
-    // get each element and store it to a variable
-    var wins = document.getElementsByClassName("win");
-    var loss = document.getElementsByClassName("loss");
-    var guess = document.getElementsByClassName("guessleft");
-    var yourGuess = document.getElementsByClassName("yourguesses");
 
     document.onkeyup = function(event) {
 
     var userGuess = event.key;
 
-    if (userGuess === randomLetter) {
-        winCount = winCount + 1;
-            guesses--;
-            guessLetters.push(userGuess);
-            document.querySelector(".win").innerHTML = winCount;
-            document.querySelector(".guessleft").innerHTML = guesses;
-            document.querySelector(".yourguesses").innerHTML = guessLetters;
+    if (userGuess) {
+        guesses--;
+        guessLetters.push(userGuess);
+        document.querySelector(".guessleft").innerHTML = guesses;
+        document.querySelector(".yourguesses").innerHTML = guessLetters;
+
     }
 
-    if (userGuess !== randomLetter) {
+    if (userGuess === randomLetter) {
+        winCount = winCount + 1;
+        document.querySelector(".guessleft").innerHTML = "10";
+        guesses = 10;
+        document.querySelector(".yourguesses").innerHTML = "";
+        guessLetters = [];
+        document.querySelector(".win").innerHTML = winCount;
+        alert("You win!");
+    
+    }
+
+    if (guesses === 0) {
         lossCount++;
-            guesses--;
-            guessLetters.push(userGuess);
             document.querySelector(".loss").innerHTML = lossCount;
-            document.querySelector(".guessleft").innerHTML = guesses;
-            document.querySelector(".yourguesses").innerHTML = guessLetters;
+
     }
 
     if (guesses === 0) {
         alert("Game Over!");
+        document.querySelector(".guessleft").innerHTML = "10";
+        guesses = 10;
+        document.querySelector(".yourguesses").innerHTML = "";
+        guessLetters = [];
    
     }
 
