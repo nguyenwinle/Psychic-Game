@@ -62,7 +62,8 @@ $(document).ready(function() {
                 document.querySelector(".guessleft").innerHTML = "10";
                 guesses = 10;
                 document.querySelector(".yourguesses").innerHTML = "";
-                guessLetters = [];  
+                guessLetters = [];
+                randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];    
                  
             }
         } else {
