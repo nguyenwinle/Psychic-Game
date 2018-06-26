@@ -48,7 +48,8 @@ $(document).ready(function() {
                 document.querySelector(".yourguesses").innerHTML = "";
                 guessLetters = [];
                 document.querySelector(".win").innerHTML = winCount;
-                alert("You win!");       
+                alert("You win!");   
+                randomLetter = alphabet[Math.floor(Math.random() * alphabet.length)];   
             }
 
             // when the guesses reach 0
